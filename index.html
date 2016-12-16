@@ -1,0 +1,46 @@
+<!doctype html>
+  <html>
+   <head>
+    <title>[Chat Application]</title>
+    <link rel='stylesheet' href='css/style.css' type='text/css'/>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+	<script src="js/bootstrap.js"></script>
+    <link rel='stylesheet' href='css/bootstrap.css' type='text/css'/>
+	
+	<script src="chat.js"></script>
+  </head>
+  <body> 
+		<div class="row" style="min-height:800px;">
+			<div class="col-xs-10">
+				<ul id="messages"></ul>
+			</div>
+			<div class="col-xs-2" id="user-list" style="min-height:800px;">
+				<ul id="users">
+					<li><b>Users<b></li>
+				</ul>
+			</div>
+		</div>
+    <span id="notifyUser"></span>
+	<form id="form" action="" onsubmit="return submitfunction();" > 
+      <input type="hidden" id="user" />
+	  <input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="Type your message here.." /><input type="submit" id="button" value="Send"/> 	  
+    </form>
+	
+	<!-- modal user info here -->
+	<div id="openModal" class="modalDialog">
+		<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<div class="container">
+			<div class="row">
+				<h3>User Settings</h3>
+				<p>
+				<span id="userInfoSpan"><span>
+			</div>
+		</div>
+		</div>
+	</div>
+  </body>
+</html>
